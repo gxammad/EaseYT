@@ -1,0 +1,101 @@
+.features {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 50px 20px;
+    background-color: #202020;
+    color: #fff;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+.feature-card {
+    background-color: #333;
+    border-radius: 10px;
+    padding: 30px 20px;
+    text-align: left; /* Align text to the left */
+    width: 300px;
+    height: 300px; /* Same height for all cards */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Align items to the left */
+    position: relative; /* To position the icon inside the card */
+}
+
+/* Card Title */
+.feature-card h3 {
+    font-size: 24px;
+    margin: 20px 0 10px;
+    text-align: left; /* Left-align the title */
+}
+
+/* Card Description */
+.feature-card p {
+    font-size: 16px;
+    color: #fafafa;
+    margin-left: 10px; /* Add left margin for description text */
+}
+
+/* Neon border hover effect */
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid transparent;
+    background-image: linear-gradient(45deg, #ff0000, #ff0000, #ff69b4, #ff0000);
+    background-size: 400% 400%;
+    border-radius: 10px;
+    z-index: -1; /* Behind the content */
+    transition: background-position 0.5s ease-in-out;
+}
+
+.feature-card:hover::before {
+    background-position: 100% 100%; /* Trigger the neon line animation */
+}
+
+/* Hover effect on card */
+.feature-card:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Positioning the icon at the top-left corner of the card */
+.feature-card .icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 50px;
+    height: 50px;
+    background-color: #ff0000; /* Default background color for icons */
+    border-radius: 10%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Add your specific icon URLs here */
+.feature-card .collaboration-icon {
+    background-image: url('search.png'); 
+    background-size: contain;
+}
+
+.feature-card .live-transcription-icon {
+    background-image: url('text.png');
+    background-size: contain;
+}
+
+.feature-card .ai-summary-icon {
+    background-image: url('summary.png');
+    background-size: contain;
+}
+
+/* For responsiveness */
+@media screen and (max-width: 768px) {
+    .features {
+        flex-direction: column; /* Stack cards vertically on smaller screens */
+        gap: 20px;
+    }
+}

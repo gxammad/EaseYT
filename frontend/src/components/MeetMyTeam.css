@@ -1,0 +1,101 @@
+.team-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #202020;
+    color: #fff;
+}
+
+.team-section h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #ff0000;
+    font-family: monospace;
+    font-weight: bold;
+
+
+}
+
+.team-members {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap; /* Adjusts for smaller screens */
+}
+
+.team-member {
+    position: relative;
+    width: 200px; /* Adjust size as needed */
+    height: 200px;
+    border-radius: 50%; /* Circle shape */
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.team-image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.team-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+/* Black overlay on hover */
+.team-image-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Black with transparency */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 50%;
+}
+
+/* Text on hover */
+.hover-info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+.hover-info .name {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.hover-info .role {
+    font-size: 16px;
+    margin: 5px 0 0;
+    color: #ff0000;
+    font-weight: bold;
+}
+
+/* Hover effects */
+.team-member:hover .team-image-container::after {
+    opacity: 1;
+}
+
+.team-member:hover .team-image {
+    transform: scale(1.1); /* Slight zoom-in on hover */
+}
+
+.team-member:hover .hover-info {
+    opacity: 1; /* Show text on hover */
+}

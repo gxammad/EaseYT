@@ -1,0 +1,73 @@
+.history-header {
+    background-color: #202020;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 80px;
+}
+
+.history-header img {
+    width: 120px;
+    cursor: pointer;
+}
+
+.history-content {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Updated List Style */
+.history-list {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: auto;
+}
+
+.history-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    transition: background 0.2s;
+}
+
+.history-card:hover {
+    background: #bdbdbd;
+}
+
+.history-card img {
+    width: 100px;
+    height: 60px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.title {
+    flex-grow: 1;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+/* Title turns red when hovered */
+.title:hover {
+    color: #ff0000; /* Your color scheme */
+}
+
+/* Delete Button */
+.delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: red;
+    transition: color 0.2s;
+}
+
+.delete-btn:hover {
+    color: darkred;
+}

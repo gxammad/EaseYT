@@ -1,0 +1,128 @@
+.stats {
+    display: flex;
+    justify-content: center; /* Center the boxes horizontally */
+    align-items: center;
+    gap: 20px; /* Increased gap for better spacing */
+    padding: 5px;
+    background-color: #1c1c1c;
+    color: #fff;
+    flex-wrap: wrap; /* Allow wrapping of boxes on smaller screens */
+    justify-content:center; 
+}
+
+.stat-box {
+    background-color: #333;
+    border-radius: 10px;
+    padding: 5px 20px;
+    text-align: center;
+    width: 200px; /* Consistent width */
+    height: 200px; /* Consistent height */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    position: relative; /* To position the neon border */
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.stat-box h2 {
+    font-size: 40px; /* Larger font size */
+    font-weight: bold;
+    margin: 0;
+}
+
+.stat-box p {
+    font-size: 18px; /* Increased font size for clarity */
+    margin: 5px 0;
+}
+
+.stat-box button {
+    padding: 12px 24px;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 30px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 5px; /* Spacing between text and button */
+}
+
+.stat-box button:hover {
+    background-color: #e60000;
+}
+
+/* Neon border effect */
+.stat-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid transparent;
+    background-image: linear-gradient(45deg, #ff0000, #ff0000, #ff69b4, #ff0000);
+    background-size: 400% 400%;
+    border-radius: 10px;
+    z-index: -1; /* Behind the content */
+    transition: background-position 0.5s ease-in-out;
+}
+
+.stat-box:hover::before {
+    background-position: 100% 100%; /* Trigger the neon line animation */
+}
+
+.stat-box:hover {
+    transform: scale(1.1); /* Slightly enlarge the box on hover */
+}
+
+/* For responsiveness */
+@media screen and (max-width: 768px) {
+    .stats {
+        flex-direction: column; /* Stack the boxes vertically on smaller screens */
+        gap: 20px;
+    }
+}
+
+/* Video Section Styles */
+.video-section {
+    text-align: center;
+    margin-top: 40px;
+    background-color: #333;
+    padding: 40px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 900px;
+    margin: 40px auto; /* Center the video section */
+}
+
+.video-section h2 {
+    font-size: 40px;
+    font-family: monospace;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #ff0000;
+}
+
+.video-section p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+.video-container iframe {
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 450px; /* Set the height for video */
+}
+
+/* Make video responsive */
+@media screen and (max-width: 768px) {
+    .video-container iframe {
+        height: 250px; /* Adjust video height on small screens */
+    }
+}
