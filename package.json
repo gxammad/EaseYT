@@ -6,15 +6,17 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "concurrently": "^9.1.0",
-    "webpack": "^5.98.0",
-    "webpack-cli": "^6.0.1",
-    "webpack-dev-server": "^5.2.0"
+    "concurrently": "^9.1.0"
   },
   "dependencies": {
     "@google-cloud/video-intelligence": "^5.3.0",
+    "@react-three/drei": "^10.0.4",
+    "@react-three/fiber": "^9.1.0",
     "assemblyai": "^4.9.0",
     "axios": "^1.7.9",
+    "dotenv": "^16.4.7",
+    "openai": "^4.86.1",
+    "three": "^0.174.0",
     "youtube-captions-scraper": "^2.0.3",
     "youtube-transcript": "^1.2.1"
   }

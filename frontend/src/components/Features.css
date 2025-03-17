@@ -4,7 +4,7 @@
     align-items: center;
     gap: 40px;
     padding: 50px 20px;
-    background-color: #202020;
+    background-color:#1c1c1c;
     color: #fff;
     flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }

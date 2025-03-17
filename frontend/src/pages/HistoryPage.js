@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { FaTrash } from 'react-icons/fa';
 import './HistoryPage.css';
 import logo from './easeyt.png';
+import { FaInstagram, FaFacebook, FaYoutube } from 'react-icons/fa';
 
 const HistoryPage = () => {
     const [history, setHistory] = useState([]);
@@ -62,6 +63,22 @@ const HistoryPage = () => {
                     <p>No watch history found.</p>
                 )}
             </main>
+            <footer className="footer">
+                    <div className="social-icons">
+                      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                        <FaInstagram />
+                      </a>
+                      <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                        <FaFacebook />
+                      </a>
+                      <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+                        <FaYoutube />
+                      </a>
+                    </div>
+                    <div className="footer-text">
+                      <p>© 2025. All rights reserved.</p>
+                    </div>
+                  </footer>
         </div>
     );
 };

@@ -1,7 +1,6 @@
 import React from 'react';
 import './MainContent.css';
 import videoIcon from './video.png';
-
 const MainContent = ({ scrollToVideo, scrollToFeatures }) => (
     <main className="main-content">
         <div className="text-content">
@@ -16,6 +15,7 @@ const MainContent = ({ scrollToVideo, scrollToFeatures }) => (
         <div className="icon">
             <img src={videoIcon} alt="Video Icon" className="video-icon" />
         </div>
+
     </main>
 );
 

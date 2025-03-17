@@ -152,22 +152,51 @@
     border-color: #ff5555;
 }
 
+/* 🎨 Modern Floating Button */
 .transcription-controls button {
-    padding: 10px 15px;
+    padding: 12px 18px;
     font-size: 16px;
-    background-color: #ff0000;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #ff0000, #ff5555);
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease-in-out, transform 0.2s;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 5px 15px rgba(255, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
 }
 
 .transcription-controls button:hover {
-    background-color: #ff5555;
-    transform: scale(1.05);
+    background: linear-gradient(135deg, #ff5555, #ff0000);
+    transform: translateY(-3px);
+    box-shadow: 0px 8px 20px rgba(255, 0, 0, 0.8);
 }
-/* Style for the transcription range slider */
+
+.transcription-controls button:active {
+    transform: scale(0.95);
+}
+
+/* Glowing Effect */
+.transcription-controls button::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, transparent);
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+}
+
+.transcription-controls button:hover::before {
+    opacity: 1;
+}
+
+/* 🔁 Style for the transcription range slider */
 .transcription-slider {
     width: 100%;
     max-width: 500px;
@@ -226,3 +255,62 @@
     font-size: 16px;
     margin-top: 5px;
 }
+
+/* 🌍 Translation Button */
+.translation-button {
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #ff0000, #ff5555);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 5px 15px rgba(255, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+/* 🔥 Hover Effect */
+.translation-button:hover {
+    background: linear-gradient(135deg, #ff5555, #ff0000);
+    transform: translateY(-3px);
+    box-shadow: 0px 8px 20px rgba(255, 0, 0, 0.8);
+}
+
+/* ⏬ Click Effect */
+.translation-button:active {
+    transform: scale(0.95);
+}
+
+/* ✨ Glowing Effect */
+.translation-button::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, transparent);
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+}
+
+.translation-button:hover::before {
+    opacity: 1;
+}
+
+/* 🎭 Floating Animation */
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-3px); }
+    100% { transform: translateY(0px); }
+}
+
+.translation-button:hover {
+    animation: floating 1.5s infinite ease-in-out;
+}
+

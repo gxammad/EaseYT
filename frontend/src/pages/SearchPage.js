@@ -87,11 +87,11 @@ const SearchPage = ({ handleSaveHistory }) => {
         </div>
         <nav>
           <ul className="nav-list">
-            <li>Search</li>
-            <li>Videos</li>
-            <li>Translation</li>
-            <li>Summary</li>
-            <li><Link to="/history">History</Link></li>
+              <li><Link to="/search">Search</Link></li>
+              <li><Link to="/video">Videos</Link></li>
+              <li><Link to="/translate">Translation</Link></li>
+              <li><Link to="/summary">Summary</Link></li>
+              <li><Link to="/history">History</Link></li>
           </ul>
         </nav>
       </header>

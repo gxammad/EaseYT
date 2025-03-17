@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import './VideoPage.css'; 
 import logo from './logo.png';
-import { FaInstagram, FaFacebook, FaYoutube } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 const VideoPage = ({ handleSaveHistory }) => {
     const { id } = useParams();
@@ -14,6 +14,7 @@ const VideoPage = ({ handleSaveHistory }) => {
     const [endTime, setEndTime] = useState('');
     const [typedText, setTypedText] = useState('');
     const [sliderValue, setSliderValue] = useState(0);
+    const navigate = useNavigate();
 
     const YOUTUBE_API_KEY = 'AIzaSyC4NyIttqQCSoUw5CM9JGQoKGKjoLDTPAY';
 
@@ -81,17 +82,22 @@ const VideoPage = ({ handleSaveHistory }) => {
 
     // Filter Transcription
     const handleFilterTranscription = () => {
-        const startSec = timeToSeconds(startTime);
-        const endSec = timeToSeconds(endTime);
-
-        if (!startTime || !endTime || startSec >= endSec) {
-            alert('Please enter a valid time range!');
+        if (!startTime || !endTime) {
+            alert('Please enter both start and end times!');
             return;
         }
-
+    
+        const startSec = timeToSeconds(startTime);
+        const endSec = timeToSeconds(endTime);
+    
+        if (startSec >= endSec) {
+            alert('Start time must be less than end time!');
+            return;
+        }
+    
         const filteredText = transcription.split('\n')
             .filter(line => {
-                const match = line.match(/\[(\d+):(\d+)\]/);
+                const match = line.match(/(\d+):(\d+)/);
                 if (match) {
                     const lineSeconds = parseInt(match[1]) * 60 + parseInt(match[2]);
                     return lineSeconds >= startSec && lineSeconds <= endSec;
@@ -99,7 +105,7 @@ const VideoPage = ({ handleSaveHistory }) => {
                 return false;
             })
             .join('\n');
-
+    
         setFilteredTranscription(filteredText || 'No transcription available in this range.');
     };
 
@@ -113,9 +119,13 @@ const VideoPage = ({ handleSaveHistory }) => {
                 if (i > filteredTranscription.length) {
                     clearInterval(interval);
                 }
-            }, 10); // Adjust typing speed
+            }, 10);
         }
     }, [filteredTranscription]);
+    const handleTranslateClick = () => {
+    navigate(`/translate?text=${encodeURIComponent(filteredTranscription)}`);
+};
+
 
     return (
         <div className="video-page">
@@ -174,34 +184,27 @@ const VideoPage = ({ handleSaveHistory }) => {
                                 onChange={(e) => setSliderValue(e.target.value)} 
                             />
                         </div>
-
+                        
                         {/* Transcription Display */}
                         <div className="transcription">
                             <h3>Transcription</h3>
                             <p className="typewriter-text">{typedText}</p>
                         </div>
+
+                        {/* Translate Button */}
+                        {filteredTranscription && (
+                            <button className="translation-button" onClick={handleTranslateClick}>
+                            Translate
+                        </button>
+                        )}
+                        
                     </div>
                 ) : (
                     <p>Loading video...</p>
                 )}
             </main>
 
-            <footer className="footer">
-                <div className="social-icons">
-                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-                        <FaInstagram />
-                    </a>
-                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                        <FaFacebook />
-                    </a>
-                    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
-                        <FaYoutube />
-                    </a>
-                </div>
-                <div className="footer-text">
-                    <p>All rights reserved 2025</p>
-                </div>
-            </footer>
+            
         </div>
     );
 };
