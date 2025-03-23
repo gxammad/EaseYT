@@ -10,14 +10,33 @@
   },
   "dependencies": {
     "@google-cloud/video-intelligence": "^5.3.0",
-    "@react-three/drei": "^10.0.4",
-    "@react-three/fiber": "^9.1.0",
+    "@mediapipe/tasks-vision": "^0.10.22-rc.20250304",
+    "@react-three/drei": "^9.122.0",
+    "@react-three/fiber": "^8.18.0",
     "assemblyai": "^4.9.0",
     "axios": "^1.7.9",
+    "chokidar": "^4.0.3",
     "dotenv": "^16.4.7",
+    "framer-motion": "^11.18.2",
+    "jspdf-autotable": "^5.0.2",
+    "micromatch": "^4.0.8",
     "openai": "^4.86.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-typewriter-effect": "^1.1.0",
+    "react-typing-effect": "^2.0.5",
+    "styled-components": "^6.1.16",
     "three": "^0.174.0",
+    "typewriter-effect": "^2.21.0",
+    "watchpack": "^2.4.2",
+    "webpack": "^5.98.0",
     "youtube-captions-scraper": "^2.0.3",
     "youtube-transcript": "^1.2.1"
+  },
+  "overrides": {
+    "braces": "^3.0.3",
+    "micromatch": "^4.0.8",
+    "chokidar": "^4.0.3",
+    "watchpack": "^2.4.2"
   }
 }

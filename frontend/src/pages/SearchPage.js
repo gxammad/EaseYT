@@ -129,7 +129,7 @@ const SearchPage = ({ handleSaveHistory }) => {
             </div>
           ))
         ) : (
-          <p className="no-results">No results found. Try a different search.</p>
+          <p className="no-results">See search results here 😊</p>
         )}
       </div>
 

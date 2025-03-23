@@ -14,8 +14,8 @@ const Header = ({ scrollToTeam }) => (
         <nav>
             <ul>
                 {/* Use Link for navigation */}
+                <li><Link to="/Overview">Overview</Link></li>
                 <li><Link to="/search">Search</Link></li>
-                <li><Link to="/video">Videos</Link></li>
                 <li><Link to="/translate">Translation</Link></li>
                 <li><Link to="/summary">Summary</Link></li>
                 <li><Link to="/history">History</Link></li>

@@ -6,7 +6,7 @@ const { getSubtitles } = require('youtube-captions-scraper');
 const transcriptionRoutes = require('./routes/transcriptionRoutes');
 const OpenAI = require("openai");
 const fileUpload = require("express-fileupload");
-
+const summaryRoutes = require("./routes/summary");
 const app = express();
 const port = process.env.PORT || 5000;
 const translateRoutes = require("./routes/translate");
@@ -19,7 +19,9 @@ require('dotenv').config();
 app.use(cors());
 app.use(bodyParser.json());
 app.use(fileUpload());
+app.use("/api", summaryRoutes);
 app.use("/api/translate", translateRoutes);
+app.use('/api', transcriptionRoutes);
 // Register routes
 app.use('/api', transcriptionRoutes);
 
@@ -28,6 +30,9 @@ mongoose.connect('mongodb://127.0.0.1:27017/easeyt', )
   .then(() => console.log('✅ MongoDB database connected successfully'))
   .catch(err => console.error('❌ MongoDB connection error:', err));
 
+ // deepseek api
+ const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
+  
 // Initialize OpenAI
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 console.log("🔑 OpenAI API Key:", process.env.OPENAI_API_KEY ? "Loaded ✅" : "Not found ❌");

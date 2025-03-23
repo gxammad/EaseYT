@@ -12,6 +12,7 @@ import VideoPage from './pages/VideoPage';
 import HistoryPage from './pages/HistoryPage';
 import TranslationPage from './pages/TranslationPage';
 import SummaryPage from './pages/SummaryPage'
+import Overview from './pages/Overview'
 
 const App = () => {
     const teamSectionRef = useRef(null);
@@ -85,7 +86,8 @@ const App = () => {
                     element={<VideoPage handleSaveHistory={handleSaveHistory} />}
                 />
                 <Route path="/summary" element={<SummaryPage />} />
-                 <Route path="/translate" element={<TranslationPage />} />
+                <Route path="/Overview" element={<Overview />} />
+                <Route path="/translate" element={<TranslationPage />} />
                 <Route path="/history" element={<HistoryPage />} />
             </Routes>
         </Router>

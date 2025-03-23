@@ -9,9 +9,10 @@ import './TranslationPage.css';
 const TranslationPage = () => {
     const navigate = useNavigate();
     const location = useLocation();
+   
     const queryParams = new URLSearchParams(location.search);
     const initialText = queryParams.get("text") || "No transcription available.";
-
+    const videoTitle = queryParams.get("title") || "Untitled Video"; // Get video title
     const [originalText, setOriginalText] = useState(initialText);
     const [translatedText, setTranslatedText] = useState("");
     const [selectedLanguage, setSelectedLanguage] = useState("fr");
@@ -66,8 +67,9 @@ const TranslationPage = () => {
             </header>
 
             {/* Translation Section */}
+            <div className="videotitle"><h2>{videoTitle}</h2> </div>
             <div className="translation-container">
-                {/* Original Text Section */}
+            
                 <div className="translation-box">
                     <h3><FaLanguage className="language-icon" /> Original Transcription</h3>
                     <textarea
@@ -126,11 +128,14 @@ const TranslationPage = () => {
             {/* Summary Button Section */}
             <section className="summary-btn-container">
             <button 
-            className="summary-btn" 
-            onClick={() => navigate("/summary", { state: { transcription: translatedText } })}
+             className="summary-btn" 
+             onClick={() => navigate("/summary", { state: { transcription: translatedText, videoTitle: videoTitle } })}
+
+
+             disabled={!translatedText.trim()}
             >
-                    <FaRobot className="ai-icon" /> Generate Summary
-                </button>
+            <FaRobot className="ai-icon" /> Generate Summary
+            </button>
             </section>
 
             {/* Footer Section */}

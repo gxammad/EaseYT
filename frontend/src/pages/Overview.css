@@ -1,0 +1,99 @@
+.overview-container {
+    background: linear-gradient(120deg, #1a1a2e, #16213e);
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* Blurry Header */
+  .blurry-header {
+    -webkit-backdrop-filter: blur(10px); /* Safari Support */
+    backdrop-filter: blur(10px); /* Standard */
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    font-size: 1.5rem;
+  }
+  
+  /* Typewriter Effect */
+  .typewriter-text {
+    margin-top: 20px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.5);
+  }
+  
+  /* Video Cards */
+  .video-cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 40px 0;
+  }
+  
+  .video-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .video-card img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  /* Blurred Info Cards */
+  .info-sections {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 40px 0;
+  }
+  
+  .info-card {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .info-card:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+  
+  /* 3D Model */
+  #threeDModel {
+    margin: 50px 0;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  /* Trusted Companies */
+  .trusted-companies, .api-logos {
+    margin: 50px 0;
+  }
+  
+  .company-logos, .api-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .company-logos img, .api-list img {
+    width: 80px;
+    height: auto;
+  }
+  
+  /* Blurry Footer */
+  .blurry-footer {
+    -webkit-backdrop-filter: blur(10px); /* Safari Support */
+    backdrop-filter: blur(10px); /* Standard */
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    font-size: 1rem;
+  }
+  

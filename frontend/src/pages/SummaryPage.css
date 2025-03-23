@@ -14,6 +14,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    height: 50px;
     background: #202020;
     padding: 15px 20px;
     border-radius: 10px;
@@ -33,7 +34,12 @@
 .back-btn:hover {
     color: white;
 }
-
+.easeyt-logo {
+    width: 130px; 
+    height: 130px;
+    margin-left: 50px;
+    align-items: center;
+}
 .content {
     width: 100%;
     max-width: 900px;
@@ -78,4 +84,32 @@
     background: white;
     color: #ff0000;
     border: 1px solid #ff0000;
+}
+
+.summary-box textarea {
+    width: 96%; /* Full width */
+    max-width: 900px; /* Limit max width */
+    height: 250px; /* Fixed height */
+    padding: 15px; /* Padding for better readability */
+    font-size: 16px; /* Readable font size */
+    font-family: "Arial", sans-serif; /* Modern font */
+    border: 2px solid white; /* Soft golden border */
+    border-radius: 10px; /* Rounded corners */
+    background-color: #333; /* Light cream background */
+    color: white; /* Darker text for contrast */
+    outline: none; /* Remove default blue outline */
+    transition: all 0.3s ease-in-out; /* Smooth transition */
+    resize: none; /* Prevent resizing */
+}
+
+/* Add hover effect */
+.summary-box textarea:hover {
+    border-color: #202020; /* Slightly darker border on hover */
+}
+
+/* Add focus effect */
+.summary-box textarea:focus {
+    border-color: #ff0000; 
+    background-color: #202020; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
 }

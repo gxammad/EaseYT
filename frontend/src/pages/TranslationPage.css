@@ -342,3 +342,9 @@ nav ul li a:hover::after {
     color: #ff0000; /* Red text */
     border: 1px solid #ff0000;
 }
+
+.videotitle {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}

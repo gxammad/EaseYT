@@ -123,9 +123,10 @@ const VideoPage = ({ handleSaveHistory }) => {
         }
     }, [filteredTranscription]);
     const handleTranslateClick = () => {
-    navigate(`/translate?text=${encodeURIComponent(filteredTranscription)}`);
-};
-
+        const videoTitle = videoDetails?.snippet?.title || "Untitled Video"; // Get video title
+        navigate(`/translate?text=${encodeURIComponent(filteredTranscription)}&title=${encodeURIComponent(videoTitle)}`);
+    };
+    
 
     return (
         <div className="video-page">

@@ -62,7 +62,13 @@ const HistoryPage = () => {
                 ) : (
                     <p>No watch history found.</p>
                 )}
+                <saction>
+                <div class="bottom-saction">
+                    <p>  </p>
+                </div>
+                  </saction>
             </main>
+            
             <footer className="footer">
                     <div className="social-icons">
                       <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">

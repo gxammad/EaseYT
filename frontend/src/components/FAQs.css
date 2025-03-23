@@ -23,7 +23,7 @@
     cursor: pointer;
     padding: 10px 0;
     border-bottom: 1px solid #333; /* Line separator for questions */
-    transition: color 0.3s ease;
+    transition: color 0.4s ease;
 }
 
 .faq-item:hover {
@@ -57,7 +57,7 @@
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    transition: max-height 0.3s ease, opacity 0.3s ease;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
 }
 
 .faq-answer.show {

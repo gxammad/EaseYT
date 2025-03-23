@@ -8,14 +8,26 @@
     background-color: #1c1c1c;
 }
 
+@keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
 .text-content h1 {
     font-size: 40px;
     font-weight: 700;
+    margin: 5px;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    display: inline-block;
+    animation: typewriter 3s steps(40) forwards;
 }
 
 .text-content p {
     font-size: 18px;
     margin-bottom: 20px;
+    font-family: 'Space Mono';
 }
 
 .buttons {
@@ -59,4 +71,47 @@
     background-color: transparent;
     border-radius: 20%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    animation: rotateBackForth 3s infinite ease-in-out;
+}
+
+/* Glow Effect & Expanding Lines */
+.icon .video-icon::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 0, 0, 0.6) 10%, transparent 70%);
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+/* Blooming Effect & Rotation on Hover */
+.icon .video-icon:hover {
+    box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000;
+    animation: rotateHover 0.8s ease-in-out infinite alternate;
+}
+
+/* Expand Neon Lines Effect on Hover */
+.icon .video-icon:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+/* Rotation Back and Forth */
+@keyframes rotateBackForth {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(5deg); }
+    100% { transform: rotate(-5deg); }
+}
+
+/* Hover Rotation (slightly faster effect) */
+@keyframes rotateHover {
+    from { transform: rotate(-5deg); }
+    to { transform: rotate(5deg); }
 }
