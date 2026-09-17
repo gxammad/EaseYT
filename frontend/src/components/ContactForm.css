@@ -1,0 +1,122 @@
+/* Contact Section */
+.contact-section {
+  text-align: center;
+  padding: 60px 10%;
+  background: transparent;
+  border-radius: 15px;
+  max-width: 700px;
+  margin: auto;
+  margin-top: -50px;
+}
+
+/* Section Heading */
+.contact-section h2 {
+  color: #ff0000;
+  font-size: 26px;
+  text-transform: uppercase;
+}
+
+/* Contact Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+/* Input & Textarea */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  max-width: 600px;
+  padding: 12px;
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255, 0, 0, 0.5);
+  border-radius: 8px;
+  font-size: 16px;
+  transition: 0.3s ease-in-out;
+}
+
+/* Placeholder Styling */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Focus Effect */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #ff0000;
+  box-shadow: 0px 0px 12px rgba(255, 0, 0, 0.8);
+  outline: none;
+}
+
+.contact-form button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px; 
+  background: #ff0000; 
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.4s ease, background 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.8), 0 0 30px rgba(255, 0, 0, 0.4);
+}
+
+/* Hover Effect */
+.contact-form button:hover {
+  background: #1e1e1e;
+  color: #ff0000;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 1), 0 0 40px rgba(255, 0, 0, 0.6);
+  transform: scale(1.05);
+}
+
+/* Button Icon */
+.contact-form button i {
+  font-size: 22px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Rotate Icon on Hover */
+.contact-form button:hover i {
+  transform: rotate(360deg);
+}
+
+/* Form Status Message */
+.form-status {
+  margin-top: 10px;
+  color: rgb(28, 255, 21);
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+  animation: glowing 1.5s infinite alternate, blink 1s step-end infinite;
+}
+
+/* Glowing Effect */
+@keyframes glowing {
+  0% {
+    text-shadow: 0 0 5px rgb(28, 255, 21), 0 0 10px rgb(28, 255, 21), 0 0 15px rgb(28, 255, 21);
+  }
+  100% {
+    text-shadow: 0 0 10px rgb(28, 255, 21), 0 0 20px rgb(28, 255, 21), 0 0 30px rgb(28, 255, 21);
+  }
+}
+
+/* Blinking Effect */
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+  
+/* Hide status message after 3 seconds */
+.form-status.fade-out {
+  opacity: 0;
+}

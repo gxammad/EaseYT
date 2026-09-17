@@ -1,0 +1,381 @@
+/* Main Container */
+.overview-container {
+  background: linear-gradient(135deg, #000, #222);
+  color: white;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+.typewriter-container{
+  margin-top: 10px;
+}
+.typewriter-text-ov {
+  font-size: 28px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #ff00ff,#ff0000, #00ffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-bottom: -5px;
+}
+
+/* Features Section Container */
+.features-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  background: linear-gradient(to right, #1e1e1e, #000000);
+  border-radius: 15px;
+  margin: 40px auto;
+  max-width: 1200px;
+}
+
+/* Features Text */
+.features-text {
+  flex: 1;
+  color: #fff;
+  text-align: left;
+  padding: 20px;
+}
+
+.features-text h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.features-text ul {
+  list-style: circle;
+  padding: 0;
+  margin-top: 20px;
+  margin-left: 50px;
+}
+
+.features-text li {
+  font-size: 20px;
+  font-weight: bold;
+  font-family:Arial, Helvetica, sans-serif;
+  padding: 10px 0;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Neon Hover Effect */
+.features-text li:hover {
+  color: #ff0000;
+  transform: scale(1.05);
+}
+
+/* 3D Model Container */
+.features-model {
+
+  background: #222;
+  border-radius: 150px;
+  transition: transform 0.3s ease;
+}
+
+/* Hover Effect for Model Container */
+.features-model:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .features-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+  }
+
+  .features-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .features-model {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+
+
+/* Info Cards Section */
+.info-sections {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 40px;
+}
+
+/* Card Styling */
+.info-card {
+  background: #222;
+  padding: 20px;
+  border-radius: 12px;
+  font-size: 18px;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  color: white;
+  text-align: center;
+  width: 250px;
+  min-height: 80px;
+  border: 2px solid #ff0000;
+  box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Neon Hover Effect */
+.neon-hover:hover {
+  background: #1e1e1e;
+  color: white;
+  box-shadow: 0px 0px 20px #ff0000;
+  transform: scale(1.05);
+}
+
+/* Expanded Card */
+.info-card.active {
+  background: #1e1e1e;
+  color: white;
+  box-shadow: 0px 0px 20px rgba(255, 0, 0, 0.8);
+  transform: scale(1.1);
+  min-height: 100px;
+  padding: 25px;
+}
+
+/* Card Text */
+.info-card p {
+  margin-top: 10px;
+  font-size: 14px;
+  opacity: 0;
+  animation: fadeIn 0.3s ease-in-out forwards;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .info-sections {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .info-card {
+    width: 80%;
+  }
+}
+
+/* Videos Section */
+.videos {
+  text-align: center;
+  padding: 40px;
+  border-radius: 10px;
+  max-width: 900px;
+  margin: 40px auto;
+  margin-top: -20px;
+}
+
+/* Section Title */
+.videos h2 {
+  font-size: 26px;
+  font-weight: bold;
+  color: #ff0000;
+}
+
+/* Video Cards Grid */
+.video-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Individual Video Card */
+.video-card {
+  text-decoration: none;
+  background: #222;
+  padding: 15px;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 220px;
+  text-align: center;
+  border: 2px solid rgba(255, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+/* Video Thumbnail */
+.video-thumbnail {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+/* Video Title */
+.video-titlez {
+  margin-top: 5px;
+  font-size: 15px;
+  color: white;
+  font-weight: lighter;
+}
+
+/* Hover Effects */
+.video-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 12px #ff0000;
+}
+
+.video-thumbnail:hover {
+  transform: scale(1.1);
+}
+
+.api-section {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.api-section h2 {
+  color: #ff0000;
+  font-size: 26px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* API Cards */
+.api-list {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.api-card {
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  width: 150px;
+  transition: 0.3s ease-in-out;
+  border: 2px solid transparent;
+}
+
+/* API Logos */
+.api-card img {
+  width: 80px;
+  transition: 0.3s ease-in-out;
+}
+
+/* Hover Effects */
+.api-card:hover {
+  border-color: #ff0000;
+  box-shadow: 0px 0px 12px rgba(255, 0, 0, 0.8);
+  transform: scale(1.1);
+}
+
+.api-card p {
+  color: white;
+  font-size: 1rem;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.api-card-1{
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  width: 150px;
+  transition: 0.3s ease-in-out;
+  border: 2px solid transparent;
+}
+
+/* API Logos */
+.api-card-1 img {
+  width: 80px;
+  margin-top: 20px;
+  transition: 0.3s ease-in-out;
+}
+
+/* Hover Effects */
+.api-card-1:hover {
+  border-color: #ff0000;
+  box-shadow: 0px 0px 12px rgba(255, 0, 0, 0.8);
+  transform: scale(1.1);
+}
+
+.api-card-1 p {
+  color: white;
+  font-size: 1rem;
+  margin-top: 15px;
+  font-weight: bold;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .api-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .api-card {
+    width: 80%;
+  }
+  .api-card-1 {
+    width: 80%;
+  }
+}
+.trusted-companies {
+  margin-top: -5px;
+  background: white;
+  padding: 10px 0;
+  text-align: center;
+  overflow: hidden;
+}
+
+.tcn {
+  margin-top: -20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ff0000;
+}
+
+/* Logo Wrapper (for smooth infinite scrolling) */
+.logos-wrapper {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+/* Scrolling Logos */
+.company-logos {
+  display: flex;
+  gap: 40px;
+  animation: scrollLogos 18s linear infinite;
+}
+
+.company-logos img {
+  height: 60px;
+  object-fit: contain;
+}
+
+/* Animation for Continuous Scrolling */
+@keyframes scrollLogos {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
