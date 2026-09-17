@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "scripts": {
     "start": "concurrently \"cd backend && node --no-deprecation server.js\" \"cd frontend && npm start\"",
-    "build": "npm run build --prefix frontend",
-    "vercel-build": "npm run build --prefix frontend"
+    "build": "npm install --prefix frontend --legacy-peer-deps && npm run build --prefix frontend",
+    "vercel-build": "npm install --prefix frontend --legacy-peer-deps && npm run build --prefix frontend"
   },
+  "workspaces": [
+    "frontend"
+  ],
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "concurrently": "^9.1.0",
